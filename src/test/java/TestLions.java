@@ -17,7 +17,7 @@ import static org.junit.Assert.assertTrue;
 public class TestLions {
 
     @Mock
-    private Feline feline = new Feline();
+    private Feline feline;
 
     @Test(expected = Exception.class)
     public void lionSexHaveExceptionTest() throws Exception {
@@ -50,8 +50,8 @@ public class TestLions {
     @Test
     public void getLionEatsMeatTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        Mockito.when(lion.getFood()).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
         List<String> expectedEatMeat = Arrays.asList("Животные", "Птицы", "Рыба");
-        assertEquals(expectedEatMeat, feline.getFood("Хищник"));
+        assertEquals(expectedEatMeat, lion.getFood());
     }
 }
