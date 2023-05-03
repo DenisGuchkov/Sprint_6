@@ -3,13 +3,11 @@ package com.example;
 import java.util.List;
 
 public class Lion {
-    private Joeys joeys;
-    private Predator predator;
+    private Feline feline;
     boolean hasMane;
 
     public Lion(Feline feline, String sex) throws Exception {
-        this.joeys = feline;
-        this.predator = feline;
+        this.feline = feline;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -20,7 +18,7 @@ public class Lion {
     }
 
     public int getKittens() {
-        return joeys.getKittens();
+        return feline.getKittens();
     }
 
     public boolean doesHaveMane() {
@@ -28,6 +26,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return predator.eatMeat();
+        return feline.eatMeat();
     }
 }
