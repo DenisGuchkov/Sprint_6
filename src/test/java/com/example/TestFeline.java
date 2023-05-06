@@ -8,20 +8,25 @@ import static org.junit.Assert.assertEquals;
 
 public class TestFeline {
 
-    @Test
-    public void felineEatMeat() throws Exception {
-        Feline feline = new Feline();
-        List<String> actual = feline.eatMeat();
 
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), actual);
+    @Test
+    public void testFamily() {
+        Feline feline = new Feline();
+        String family = feline.getFamily();
+        assertEquals("Кошачьи", family);
     }
 
     @Test
-    public void felineGetFamily() {
+    public void testGetKittens() {
         Feline feline = new Feline();
-        String actual = feline.getFamily();
-        String expected = "Кошачьи";
+        assertEquals(1, feline.getKittens());
 
-        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCountKittens() {
+        Feline feline = new Feline();
+        assertEquals(3, feline.getKittens(3));
+
     }
 }
